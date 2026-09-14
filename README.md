@@ -47,11 +47,11 @@ The following screenshot shows the configuration of the host system, VirtualBox,
 | Component | Configuration |
 |---|---|
 | Host OS | Windows 10 |
-| Host RAM | 8 GB |
-| Processor | Intel Core i7 |
+| Host RAM | 16 GB |
+| Processor | AMD Ryzen |
 | Hypervisor | VirtualBox 7.2 |
-| Security OS | Kali Linux 2026.2 |
-| Kali RAM | 2048 MB |
+| Security OS | Kali Linux 2025.4 |
+| Kali RAM | 3048 MB |
 | Virtual Network | NAT Network |
 | Network Address | `10.0.0.0/24` |
 | Kali IP Address | `10.0.0.2/24` |
