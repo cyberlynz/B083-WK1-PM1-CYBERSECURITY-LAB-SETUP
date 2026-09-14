@@ -18,7 +18,7 @@
 
 This project documents the setup of a basic cybersecurity testing lab for practical security exercises during the NetworkWalks cybersecurity internship.
 
-The lab uses **VirtualBox** to run **Kali Linux** as the attacking/testing machine. The virtual network is configured around the required **10.0.0.0/24** subnet, with Kali assigned **10.0.0.2/24** and internet access through the configured NAT Network.
+The lab uses **VirtualBox** to run **Kali Linux** as the attacking/testing machine. The virtual network is configured around the required **10.0.0.0/24** subnet.
 
 The purpose of the environment is to provide an isolated and controlled platform for learning cybersecurity tools, networking, reconnaissance, vulnerability assessment, and penetration-testing techniques.
 
@@ -72,6 +72,14 @@ The lab provides a safe environment for cybersecurity practice. Testing activiti
 | Gateway | `10.0.0.1` |
 | Shared Folder | `/downloads` |
 | VM Integration | Clipboard and Drag-and-Drop enabled |
+
+### NAT Network Configuration
+
+The VirtualBox NAT Network was configured with the required `10.0.0.0/24` IPv4 subnet. DHCP is enabled for the NAT Network.
+
+![NAT Network Configuration](2-screenshot-network-settings-1.png)
+
+*Figure 1: VirtualBox NAT Network configuration showing `10.0.0.0/24` with DHCP enabled.*
 
 ## 🛠️ Lab Setup Procedure
 
@@ -155,7 +163,7 @@ If the issue continues, restart the Kali VM and re-check the VirtualBox NAT Netw
 
 This exercise helped me understand how to build a controlled virtual cybersecurity lab and how virtualization, network configuration, and VM integration settings work together.
 
-I also gained practical experience with configuring a private subnet, assigning a static address to a Linux testing machine, checking connectivity, and maintaining a recoverable VM state with snapshots.
+I also gained practical experience with configuring a private subnet, assigning a Linux testing machine to the lab network, checking connectivity, and maintaining a recoverable VM state with snapshots.
 
 ## 🔒 Security & Ethical Use
 
