@@ -42,7 +42,6 @@ The lab provides a safe environment for cybersecurity practice. Testing activiti
 
 The following screenshot shows the configuration of the host system, VirtualBox, Kali Linux, and the virtual network used for the lab.
 
-![Lab Configuration](6-lab-configuration.png)
 
 | Component | Configuration |
 |---|---|
