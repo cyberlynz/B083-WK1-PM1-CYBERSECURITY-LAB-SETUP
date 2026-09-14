@@ -40,18 +40,24 @@ The lab provides a safe environment for cybersecurity practice. Testing activiti
 
 ## ⚙️ Lab Configuration
 
+The following screenshot shows the configuration of the host system, VirtualBox, Kali Linux, and the virtual network used for the lab.
+
 ![Lab Configuration](6-lab-configuration.png)
 
 | Component | Configuration |
 |---|---|
-| Virtualization Platform | VirtualBox |
-| Testing Machine | Kali Linux |
-| Network Type | NAT Network |
-| Network Subnet | `10.0.0.0/24` |
-| Kali Linux IP | `10.0.0.2/24` |
-| Gateway | `10.0.0.1` |
-| Shared Folder | `/downloads` |
-| VM Integration | Clipboard and Drag-and-Drop enabled |
+| Host OS | Windows 10 |
+| Host RAM | 8 GB |
+| Processor | Intel Core i7 |
+| Hypervisor | VirtualBox 7.2 |
+| Security OS | Kali Linux 2026.2 |
+| Kali RAM | 2048 MB |
+| Virtual Network | NAT Network |
+| Network Address | `10.0.0.0/24` |
+| Kali IP Address | `10.0.0.2/24` |
+| Default Gateway | `10.0.0.1` |
+| DNS Server | `8.8.8.8` |
+| Future VM Range | `10.0.0.3–10.0.0.99` |
 
 ## 📸 Screenshots
 
