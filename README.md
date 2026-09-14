@@ -38,29 +38,9 @@ The purpose of the environment is to provide an isolated and controlled platform
 
 The lab provides a safe environment for cybersecurity practice. Testing activities should be performed only on systems that are owned by me, provided for training, or explicitly authorized for security testing.
 
-## 🏗️ Lab Architecture
-
-```text
-                         Internet
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │   Host System   │
-                    │   Windows PC    │
-                    └────────┬────────┘
-                             │
-                     VirtualBox NAT Network
-                        10.0.0.0/24
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │    Kali Linux   │
-                    │  10.0.0.2/24    │
-                    │ Testing Machine │
-                    └─────────────────┘
-```
-
 ## ⚙️ Lab Configuration
+
+![Lab Configuration](6-lab-configuration.png)
 
 | Component | Configuration |
 |---|---|
@@ -92,6 +72,12 @@ The Kali Linux VM is connected to the configured `NatNetwork` using the VirtualB
 The following screenshot shows the NetworkManager commands used to resolve the networking configuration issue. The connection was successfully deactivated and activated again.
 
 ![Kali Network Troubleshooting](4-screenshot-kali-network-settings.png)
+
+### VirtualBox Manager
+
+The VirtualBox Manager screenshot shows the Kali Linux virtual machine used for the lab.
+
+![VirtualBox Manager](5-screenshot-virtualbox-manager.png)
 
 ## 🛠️ Lab Setup Procedure
 
@@ -140,7 +126,7 @@ These settings make it easier to transfer files and interact with the lab enviro
 
 ### Step 7 — Take a Snapshot
 
-After completing the configuration and verifying the environment, a VirtualBox snapshot was taken so the working lab state can be restored when necessary. ![Snapshot](5-screenshot-kali-snapshot.png)
+After completing the configuration and verifying the environment, a VirtualBox snapshot was taken so the working lab state can be restored when necessary.
 
 ## 🐛 Troubleshooting
 
@@ -154,7 +140,7 @@ sudo nmcli connection down "Wired connection 1"
 sudo nmcli connection up "Wired connection 1"
 ```
 
-The screenshot above shows that the connection was successfully deactivated and activated after applying the configuration change.
+The screenshot shows that the connection was successfully deactivated and activated after applying the configuration change.
 
 ## ✅ Lab Verification
 
