@@ -18,7 +18,7 @@
 
 This project documents the setup of a basic cybersecurity testing lab for practical security exercises during the NetworkWalks cybersecurity internship.
 
-The lab uses **VirtualBox** to run **Kali Linux** as the attacking/testing machine. The virtual network is configured around the required **10.0.0.0/24** subnet.
+The lab uses **VirtualBox** to run **Kali Linux** as the attacking/testing machine. The virtual network is configured around the required **10.0.0.0/24** subnet, with Kali assigned **10.0.0.2/24** and internet access through the configured NAT Network.
 
 The purpose of the environment is to provide an isolated and controlled platform for learning cybersecurity tools, networking, reconnaissance, vulnerability assessment, and penetration-testing techniques.
 
@@ -73,13 +73,25 @@ The lab provides a safe environment for cybersecurity practice. Testing activiti
 | Shared Folder | `/downloads` |
 | VM Integration | Clipboard and Drag-and-Drop enabled |
 
+## 📸 Screenshots
+
 ### NAT Network Configuration
 
-The VirtualBox NAT Network was configured with the required `10.0.0.0/24` IPv4 subnet. DHCP is enabled for the NAT Network.
+The VirtualBox NAT Network is configured with the required `10.0.0.0/24` IPv4 prefix and DHCP enabled.
 
 ![NAT Network Configuration](2-screenshot-network-settings-1.png)
 
-*Figure 1: VirtualBox NAT Network configuration showing `10.0.0.0/24` with DHCP enabled.*
+### Kali Linux Network Adapter
+
+The Kali Linux VM is connected to the configured `NatNetwork` using the VirtualBox network adapter.
+
+![Kali Linux Network Adapter](3-screenshot-kali-linux.png)
+
+### Kali Network Configuration Troubleshooting
+
+The following screenshot shows the NetworkManager commands used to resolve the networking configuration issue. The connection was successfully deactivated and activated again.
+
+![Kali Network Troubleshooting](4-screenshot-kali-network-settings.png)
 
 ## 🛠️ Lab Setup Procedure
 
@@ -130,9 +142,21 @@ These settings make it easier to transfer files and interact with the lab enviro
 
 After completing the configuration and verifying the environment, a VirtualBox snapshot was taken so the working lab state can be restored when necessary.
 
-## ✅ Lab Verification
+## 🐛 Troubleshooting
 
-The environment should be verified by checking:
+During setup, network configuration problems can be investigated by checking the NAT Network, VM network adapter settings, IP conflicts, and the Kali connection profile.
+
+For the VirtualBox/Kali networking issue covered in the NetworkWalks task instructions, the following commands were used:
+
+```bash
+sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
+sudo nmcli connection down "Wired connection 1"
+sudo nmcli connection up "Wired connection 1"
+```
+
+The screenshot above shows that the connection was successfully deactivated and activated after applying the configuration change.
+
+## ✅ Lab Verification
 
 | Check | Expected Result |
 |---|---|
@@ -145,25 +169,11 @@ The environment should be verified by checking:
 | Shared Folder | `/downloads` |
 | Snapshot | Created after setup |
 
-## 🐛 Troubleshooting
-
-During setup, network configuration problems can be investigated by checking the NAT Network, VM network adapter settings, IP conflicts, and the Kali connection profile.
-
-For the VirtualBox/Kali networking issue covered in the NetworkWalks task instructions, the following commands can be used:
-
-```bash
-sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
-sudo nmcli connection down "Wired connection 1"
-sudo nmcli connection up "Wired connection 1"
-```
-
-If the issue continues, restart the Kali VM and re-check the VirtualBox NAT Network configuration.
-
 ## 📚 What I Learned
 
 This exercise helped me understand how to build a controlled virtual cybersecurity lab and how virtualization, network configuration, and VM integration settings work together.
 
-I also gained practical experience with configuring a private subnet, assigning a Linux testing machine to the lab network, checking connectivity, and maintaining a recoverable VM state with snapshots.
+I also gained practical experience with configuring a private subnet, assigning a static address to a Linux testing machine, troubleshooting NetworkManager connectivity, and maintaining a recoverable VM state with snapshots.
 
 ## 🔒 Security & Ethical Use
 
@@ -174,7 +184,7 @@ This laboratory environment is intended for authorized cybersecurity training an
 - VirtualBox
 - Kali Linux
 - 7-Zip
-- Network configuration tools (`nmcli`)
+- NetworkManager (`nmcli`)
 - NAT Network
 
 ## 👤 Author
