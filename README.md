@@ -82,7 +82,7 @@ The following screenshot shows the NetworkManager commands used to resolve the n
 
 The VirtualBox Manager screenshot shows the Kali Linux virtual machine used for the lab.
 
-![VirtualBox Manager](5-screenshot-virtualbox-manager.png)
+![VirtualBox Manager](5-screenshot-kali-snapshot.png)
 
 ## 🛠️ Lab Setup Procedure
 
