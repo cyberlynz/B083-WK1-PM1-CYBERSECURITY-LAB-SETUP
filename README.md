@@ -140,7 +140,7 @@ These settings make it easier to transfer files and interact with the lab enviro
 
 ### Step 7 — Take a Snapshot
 
-After completing the configuration and verifying the environment, a VirtualBox snapshot was taken so the working lab state can be restored when necessary.
+After completing the configuration and verifying the environment, a VirtualBox snapshot was taken so the working lab state can be restored when necessary. ![Snapshot](5-screenshot-kali-snapshot.png)
 
 ## 🐛 Troubleshooting
 
